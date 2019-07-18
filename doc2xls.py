@@ -5,10 +5,12 @@ from docx import Document
 xlsx_file = os.getcwd()+'\\' + '形式审查汇总表.xlsx'
 #print(xlsx_file)
 wb = openpyxl.load_workbook(xlsx_file)
+#Sheet1 为基础支撑平台   Sheet2为行业应用平台
 sheet = wb.get_sheet_by_name('Sheet2')
 #print(sheet.max_row)
 for i in range(2, sheet.max_row + 1):
     try:
+        # A 为基础支撑平台   B 为行业应用平台
         doc_file = os.getcwd()+'\\ok\\'+ 'B'+str(sheet.cell(row=i, column=1).value)+'-'+sheet.cell(row=i, column=4).value+'-ok.docx'
         doc = Document(doc_file)
         #print(doc_file)
