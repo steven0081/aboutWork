@@ -1,0 +1,7 @@
+安装python-docx：
+
+pip install python_docx
+
+安装 openpyxl
+
+pip install openpyxl
