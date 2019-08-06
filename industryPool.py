@@ -46,7 +46,7 @@ def read_pdfFile ():
     wb = openpyxl.load_workbook(xlsx_file)
     sheet = wb.get_sheet_by_name('Sheet1')
     row_no = sheet.max_row +2
-    print(row_no)
+    #print(row_no)
     # 设置 PDF 文件信息
     file_dir = r'E:\joeCloud\Documents\工业互联网\工业互联网资源池\第二批\收到材料\pdf'
     file_list = os.listdir(file_dir)
@@ -65,13 +65,13 @@ def read_pdfFile ():
                     for i in range(len(row)):
                         if row[i] is not None:
                             sheet.cell(row=row_no+r_count, column=i+1).value = row[i]
-                    print(row)
+                    #print(row)
                     r_count += 1
                 row_no = row_no + r_count + 2
                 t_count = t_count + 1
-                print('t_count= ', t_count)
-                print('r_count=', r_count)
-                print('row_no = ', row_no)
+                #print('t_count= ', t_count)
+                #print('r_count=', r_count)
+                #print('row_no = ', row_no)
                 print('---------- 分割线 ----------')
             if t_count > 2 :
                 break
@@ -80,6 +80,7 @@ def read_pdfFile ():
         wb.save(xlsx_file)
 
 def format_xlsFile():
+    #把读取的每个单位信息转化为列表
     xlsx_file = r'E:\joeCloud\Documents\工业互联网\工业互联网资源池\第二批\temp.xlsx'
     wb = openpyxl.load_workbook(xlsx_file)
     sheet = wb.get_sheet_by_name('Sheet2')
